@@ -16,7 +16,7 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
    @NotNull(message = "check in date is required")
     private LocalDate checkInDate;

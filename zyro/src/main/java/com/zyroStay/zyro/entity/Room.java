@@ -24,8 +24,8 @@ public class Room {
     private String roomDescription;
 
 
-    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
-    private List<Booking> booking=new ArrayList<>();
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Booking> bookings=new ArrayList<>();
 
     @Override
     public String toString() {
