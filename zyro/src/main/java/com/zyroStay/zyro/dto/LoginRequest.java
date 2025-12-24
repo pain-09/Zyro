@@ -1,0 +1,15 @@
+package com.zyroStay.zyro.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+@Data
+public class LoginRequest {
+
+    @NotBlank(message = "Email is required can not be blank")
+    private String email;
+
+    @NotBlank(message = "Password is required can not be blank")
+    private String password;
+}
