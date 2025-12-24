@@ -1,0 +1,40 @@
+package com.zyroStay.zyro.entity;
+
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Data
+@Table(name = "rooms")
+public class Room {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+
+
+    private String roomType;
+    private BigDecimal roomPrice;
+    private String roomPhotoUrl;
+    private String roomDescription;
+
+
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    private List<Booking> booking=new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", roomType='" + roomType + '\'' +
+                ", roomPrice=" + roomPrice +
+                ", roomPhotoUrl='" + roomPhotoUrl + '\'' +
+                ", roomDescription='" + roomDescription + '\'' +
+                '}';
+    }
+}
