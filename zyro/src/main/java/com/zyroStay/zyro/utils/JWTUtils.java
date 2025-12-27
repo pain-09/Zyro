@@ -19,7 +19,7 @@ public class JWTUtils {
     private final SecretKey Key;
 
     public JWTUtils(SecretKey key) {
-        String secreteString = "JWT@Secure#Signing$Key%2025!xR9PqLm";
+        String secreteString = "JWT@Secure#Signing$Key%2025!ByPain";
         byte[] keyBytes= Base64.getDecoder().decode(secreteString.getBytes(StandardCharsets.UTF_8));
         this.Key=new SecretKeySpec(keyBytes,"HmacSHA256");
     }
